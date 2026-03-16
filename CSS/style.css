@@ -26,6 +26,10 @@ h5 {
 #header .navbar .container {
     margin: auto;
     width: 80%;
+    position: absolute;
+    top: 0%;
+    right: 0%;
+    left: 0%;
 }
 
 #header .navbar .nav-logo {
@@ -950,20 +954,29 @@ textarea {
 
 
 
-/* ===================================================
-   RESPONSIVE MEDIA QUERIES
-=================================================== */
-
-/* ===================== Tablet ===================== */
-
 @media screen and (max-width: 768px) {
 
+    /* 1. تظبيط الـ Container العام */
     .container {
         width: 95% !important;
         margin: auto !important;
     }
 
-    /* NAVBAR */
+    /* 2. الهيدر والناف بار */
+    #header {
+        height: 100vh !important;
+        background-position: center center !important;
+    }
+
+    #header .navbar .container {
+        position: absolute !important;
+        top: 0;
+        right: 0;
+        left: 0;
+        width: 95% !important;
+        margin: auto !important;
+        padding-top: 15px;
+    }
 
     #header .navbar .nav-logo,
     #header .navbar .nav-links {
@@ -976,37 +989,58 @@ textarea {
         padding: 10px 0 !important;
     }
 
+    #header .navbar .nav-logo a {
+        padding: 0 !important;
+    }
+
+    #header .navbar .nav-links {
+        margin-top: 10px;
+    }
+
     #header .navbar .nav-links ul {
-        padding: 0;
-        margin: 0;
+        margin: 0 !important;
+        padding: 0 !important;
+        list-style: none;
+        text-align: center;
     }
 
     #header .navbar .nav-links li {
         display: inline-block !important;
-        padding: 6px 8px !important;
+        padding: 5px 8px !important;
         font-size: 14px !important;
     }
 
     #header .navbar .nav-links li a {
+        padding: 0 !important;
         font-size: 14px !important;
     }
 
-    /* HEADER TEXT */
-
     #header .head-content {
-        padding-top: 280px !important;
+        padding-top: 300px !important;
+        text-align: center;
+    }
+
+    #header .head-content .active {
+        font-size: 20px !important;
     }
 
     #header .head-content h1 {
         font-size: 42px !important;
+        line-height: 1.2;
+    }
+
+    #header .head-content .type-js {
+        font-size: 22px !important;
     }
 
     #header .head-content .type-js p {
-        font-size: 20px !important;
+        margin: 0 !important;
+        color: #FFFFFF;
+        font-size: 22px !important;
+        line-height: 1.5;
     }
 
-    /* ABOUT */
-
+    /* 3. سكشن About */
     #about .about-img,
     #about .about-content {
         width: 100% !important;
@@ -1021,64 +1055,63 @@ textarea {
         float: none !important;
     }
 
-    /* SERVICES */
-
+    /* 4. سكشن Our Services */
     #ser .ser-content .items {
-        width: 50% !important;
-        float: left !important;
-        margin-bottom: 20px;
+        width: 100% !important;
+        float: none !important;
+        margin-bottom: 15px !important;
     }
 
-    /* PORTFOLIO */
-
-    #por .img-content .container .imgs {
-        width: 50% !important;
-        float: left !important;
-        padding-right: 10px !important;
+    /* 5. سكشن Our Portfolio */
+    #por .img-content .imgs {
+        width: 100% !important;
+        float: none !important;
+        margin-bottom: 20px !important;
+        padding: 0 !important;
     }
 
-    /* DETAILS */
-
+    /* 6. سكشن Details */
     #detailes .item {
-        width: 50% !important;
-        float: left !important;
-        margin-bottom: 30px;
+        width: 100% !important;
+        float: none !important;
+        margin-bottom: 30px !important;
     }
 
-    /* FEEDBACK */
-
+    /* 7. سكشن Feedback */
     #feedback .card {
-        width: 90% !important;
-        padding: 25px !important;
+        width: 100% !important;
+        padding: 15px !important;
     }
 
     #feedback .card .card-img {
-        float: none !important;
         width: 100% !important;
-        text-align: center;
-        margin-bottom: 15px;
+        float: none !important;
+        margin-bottom: 15px !important;
+    }
+
+    #feedback .card .card-img img {
+        margin: 0 auto !important;
     }
 
     #feedback .card .card-text {
-        float: none !important;
         width: 100% !important;
-        text-align: center;
+        float: none !important;
+        text-align: center !important;
     }
 
-    /* BLOG */
-
+    /* 8. سكشن Our Blog */
     #blog .content .item {
         width: 100% !important;
         float: none !important;
-        margin-bottom: 30px;
+        margin-bottom: 30px !important;
     }
 
-    /* CONTACT */
-
+    /* 9. سكشن Contact Us */
     #contact .content {
-        width: 90% !important;
+        width: 100% !important;
         height: auto !important;
         position: relative !important;
+        padding: 20px 0 !important;
     }
 
     #contact .content input,
@@ -1090,14 +1123,18 @@ textarea {
         display: block !important;
     }
 
+    /* 10. تصفير الـ Clearfix */
+    .clear-fix {
+        display: block !important;
+        float: none !important;
+        clear: both !important;
+    }
 }
 
-
-/* ===================== Mobile ===================== */
-
 @media screen and (max-width: 480px) {
-
-    /* NAVBAR */
+    #header {
+        height: 100vh !important;
+    }
 
     #header .navbar .nav-links li {
         display: block !important;
@@ -1109,69 +1146,24 @@ textarea {
         font-size: 15px !important;
     }
 
-    /* HEADER TEXT */
-
     #header .head-content {
-        padding-top: 320px !important;
-    }
-
-    #header .head-content h1 {
-        font-size: 32px !important;
+        padding-top: 360px !important;
     }
 
     #header .head-content .active {
         font-size: 18px !important;
     }
 
+    #header .head-content h1 {
+        font-size: 32px !important;
+    }
+
+    #header .head-content .type-js,
     #header .head-content .type-js p {
         font-size: 18px !important;
     }
 
-    /* SERVICES */
-
-    #ser .ser-content .items {
-        width: 100% !important;
-        float: none !important;
+    #header .navbar .nav-logo a {
+        font-size: 22px !important;
     }
-
-    /* PORTFOLIO */
-
-    #por .img-content .container .imgs {
-        width: 100% !important;
-        float: none !important;
-        padding-right: 0 !important;
-    }
-
-    /* DETAILS */
-
-    #detailes .item {
-        width: 100% !important;
-        float: none !important;
-    }
-
-    /* BLOG */
-
-    #blog .content .item {
-        width: 100% !important;
-        float: none !important;
-    }
-
-}
-
-
-.navbar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 999;
-    background-color: rgba(0, 0, 0, 0.85);
-}
-
-html {
-    scroll-behavior: smooth;
-}
-
-.nav-links a.active {
-    color: #FF305B;
 }
