@@ -23,13 +23,17 @@ h5 {
 
 /* Nav-Bar */
 
+#header .navbar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
 #header .navbar .container {
     margin: auto;
     width: 80%;
-    position: absolute;
-    top: 0%;
-    right: 0%;
-    left: 0%;
+
 }
 
 #header .navbar .nav-logo {
@@ -233,7 +237,7 @@ h5 {
 }
 
 #about .about-content .btn-1 {
-    margin-left: 40px;
+    margin-left: 0;
 }
 
 
@@ -627,7 +631,7 @@ h5 {
 #feedback .card .card-img {
     text-align: center;
     float: left;
-    width: 10%;
+    width: 20%;
 }
 
 #feedback .card .card-img img {
@@ -640,7 +644,7 @@ h5 {
 
 #feedback .card .card-text {
     float: right;
-    width: 80%;
+    width: 70%;
 }
 
 #feedback .card .card-text .fa-location-dot {
@@ -828,63 +832,46 @@ h5 {
 
 
 #contact .content {
-    padding: 90px 0;
+    padding: 40px 0;
     width: 50%;
     margin: auto;
     text-align: center;
-    position: relative;
 }
 
 #contact .content .form-groub {
-    padding-bottom: 50px;
+    padding-bottom: 0;
 }
 
 #contact .content .name,
-.email,
-.subject,
-.message {
+#contact .content .email {
+    width: 47%;
+    float: left;
     padding: 10px 10px;
-    margin: 20px 10px;
+    margin: 20px 1.5%;
     border: 1px solid #ccc;
     border-radius: 3px;
 }
 
-
-#contact .content .name {
-    float: left;
-    width: 47%;
-    position: absolute;
-    top: 0%;
-    left: 0%;
-}
-
 #contact .content .email {
     float: right;
-    width: 47%;
-    position: absolute;
-    top: 0%;
-    right: 0%;
 }
 
-#contact .content .subject {
-    position: absolute;
-    top: 27%;
-    left: 0%;
-    right: 0%;
+#contact .content .subject,
+#contact .content .message {
+    width: 97%;
+    padding: 10px 10px;
+    margin: 20px 1.5%;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    display: block;
 }
 
 #contact .content .message {
-    position: absolute;
-    top: 53%;
-    right: 0%;
-    left: 0%;
-    min-height: 40%;
+    min-height: 150px;
+    resize: vertical;
 }
 
 #contact .content button {
-    position: absolute;
-    top: 110%;
-    left: 1%;
     background-color: #FF305B;
     color: #FFFFFF;
     border: none;
@@ -893,6 +880,9 @@ h5 {
     text-transform: uppercase;
     transition: background-color 0.5s;
     cursor: not-allowed;
+    margin-top: 15px;
+    margin-left: 1.5%;
+    display: block;
 }
 
 #contact .content button:hover {
@@ -953,29 +943,20 @@ textarea {
 
 
 
-
 @media screen and (max-width: 768px) {
-
-    /* 1. تظبيط الـ Container العام */
     .container {
         width: 95% !important;
         margin: auto !important;
     }
 
-    /* 2. الهيدر والناف بار */
     #header {
         height: 100vh !important;
         background-position: center center !important;
     }
 
     #header .navbar .container {
-        position: absolute !important;
-        top: 0;
-        right: 0;
-        left: 0;
         width: 95% !important;
-        margin: auto !important;
-        padding-top: 15px;
+        padding-top: 10px !important;
     }
 
     #header .navbar .nav-logo,
@@ -989,64 +970,48 @@ textarea {
         padding: 10px 0 !important;
     }
 
-    #header .navbar .nav-logo a {
-        padding: 0 !important;
-    }
-
-    #header .navbar .nav-links {
-        margin-top: 10px;
-    }
-
     #header .navbar .nav-links ul {
         margin: 0 !important;
         padding: 0 !important;
-        list-style: none;
-        text-align: center;
+        list-style: none !important;
     }
 
     #header .navbar .nav-links li {
         display: inline-block !important;
-        padding: 5px 8px !important;
-        font-size: 14px !important;
+        padding: 6px 6px !important;
     }
 
     #header .navbar .nav-links li a {
+        font-size: 13px !important;
         padding: 0 !important;
-        font-size: 14px !important;
     }
 
     #header .head-content {
-        padding-top: 300px !important;
-        text-align: center;
-    }
-
-    #header .head-content .active {
-        font-size: 20px !important;
+        padding-top: 260px !important;
+        padding-left: 15px !important;
+        padding-right: 15px !important;
     }
 
     #header .head-content h1 {
         font-size: 42px !important;
-        line-height: 1.2;
-    }
-
-    #header .head-content .type-js {
-        font-size: 22px !important;
     }
 
     #header .head-content .type-js p {
-        margin: 0 !important;
-        color: #FFFFFF;
         font-size: 22px !important;
-        line-height: 1.5;
     }
 
-    /* 3. سكشن About */
     #about .about-img,
-    #about .about-content {
+    #about .about-content,
+    #ser .ser-content .items,
+    #por .img-content .container .imgs,
+    #detailes .item,
+    #blog .content .item,
+    #feedback .card .card-img,
+    #feedback .card .card-text {
         width: 100% !important;
         float: none !important;
         padding: 0 !important;
-        margin-bottom: 20px;
+        margin-bottom: 20px !important;
     }
 
     #about .about-lists .list-left,
@@ -1055,99 +1020,53 @@ textarea {
         float: none !important;
     }
 
-    /* 4. سكشن Our Services */
-    #ser .ser-content .items {
-        width: 100% !important;
-        float: none !important;
-        margin-bottom: 15px !important;
+    #about .about-content .btn-1 {
+        margin-left: 0 !important;
     }
 
-    /* 5. سكشن Our Portfolio */
-    #por .img-content .imgs {
-        width: 100% !important;
-        float: none !important;
-        margin-bottom: 20px !important;
-        padding: 0 !important;
-    }
-
-    /* 6. سكشن Details */
-    #detailes .item {
-        width: 100% !important;
-        float: none !important;
-        margin-bottom: 30px !important;
-    }
-
-    /* 7. سكشن Feedback */
     #feedback .card {
         width: 100% !important;
-        padding: 15px !important;
-    }
-
-    #feedback .card .card-img {
-        width: 100% !important;
-        float: none !important;
-        margin-bottom: 15px !important;
+        padding: 20px !important;
     }
 
     #feedback .card .card-img img {
+        display: block !important;
         margin: 0 auto !important;
     }
 
     #feedback .card .card-text {
-        width: 100% !important;
-        float: none !important;
         text-align: center !important;
     }
 
-    /* 8. سكشن Our Blog */
-    #blog .content .item {
-        width: 100% !important;
-        float: none !important;
-        margin-bottom: 30px !important;
+    #blog .content .item .item-2 iframe {
+        height: 220px !important;
     }
 
-    /* 9. سكشن Contact Us */
     #contact .content {
-        width: 100% !important;
-        height: auto !important;
-        position: relative !important;
-        padding: 20px 0 !important;
+        width: 95% !important;
     }
 
-    #contact .content input,
-    #contact .content textarea,
-    #contact .content button {
-        position: static !important;
+    #contact .content .name,
+    #contact .content .email,
+    #contact .content .subject,
+    #contact .content .message {
         width: 100% !important;
-        margin: 10px 0 !important;
-        display: block !important;
-    }
-
-    /* 10. تصفير الـ Clearfix */
-    .clear-fix {
-        display: block !important;
         float: none !important;
-        clear: both !important;
+        margin: 10px 0 !important;
+    }
+
+    #contact .content button {
+        margin-left: 0 !important;
     }
 }
 
 @media screen and (max-width: 480px) {
-    #header {
-        height: 100vh !important;
-    }
-
-    #header .navbar .nav-links li {
-        display: block !important;
-        padding: 8px 0 !important;
-    }
-
-    #header .navbar .nav-links li a {
-        display: block;
-        font-size: 15px !important;
+    #header .navbar .nav-links {
+        display: none !important;
     }
 
     #header .head-content {
-        padding-top: 360px !important;
+        padding-top: 220px !important;
     }
 
     #header .head-content .active {
@@ -1158,12 +1077,12 @@ textarea {
         font-size: 32px !important;
     }
 
-    #header .head-content .type-js,
     #header .head-content .type-js p {
         font-size: 18px !important;
     }
 
-    #header .navbar .nav-logo a {
-        font-size: 22px !important;
+    #about .about-content button {
+        width: 100% !important;
+        margin: 10px 0 !important;
     }
 }
