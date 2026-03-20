@@ -30,15 +30,21 @@
           <div class="nav-logo">
             <a href="#">Fokir</a>
           </div>
+
+          <input type="checkbox" id="menu-toggle" />
+          <label for="menu-toggle" class="menu-icon">
+            <i class="fa-solid fa-bars"></i>
+          </label>
+
           <div class="nav-links">
             <ul>
-              <li><a class="color" href="#">Home</a></li>
-              <li><a href="#">About</a></li>
-              <li><a href="#">Services</a></li>
-              <li><a href="#">Portfolio</a></li>
-              <li><a href="#">Testimonial</a></li>
-              <li><a href="#">Blog</a></li>
-              <li><a href="#">Contact</a></li>
+              <li><a class="nav-link color" href="#header">Home</a></li>
+              <li><a class="nav-link" href="#about">About</a></li>
+              <li><a class="nav-link" href="#ser">Services</a></li>
+              <li><a class="nav-link" href="#por">Portfolio</a></li>
+              <li><a class="nav-link" href="#feedback">Testimonial</a></li>
+              <li><a class="nav-link" href="#blog">Blog</a></li>
+              <li><a class="nav-link" href="#contact">Contact</a></li>
             </ul>
           </div>
           <div class="clear-fix"></div>
@@ -445,5 +451,50 @@
         </div>
       </div>
     </div>
+
+    <script>
+      const sections = document.querySelectorAll(
+        "#header, #about, #ser, #por, #feedback, #blog, #contact",
+      );
+      const navLinks = document.querySelectorAll(".nav-link");
+      const menuToggle = document.getElementById("menu-toggle");
+
+      function setActiveLink() {
+        let currentSection = "header";
+
+        sections.forEach((section) => {
+          const sectionTop = section.offsetTop - 120;
+          const sectionHeight = section.offsetHeight;
+
+          if (
+            window.scrollY >= sectionTop &&
+            window.scrollY < sectionTop + sectionHeight
+          ) {
+            currentSection = section.getAttribute("id");
+          }
+        });
+
+        navLinks.forEach((link) => {
+          link.classList.remove("color");
+          if (link.getAttribute("href") === `#${currentSection}`) {
+            link.classList.add("color");
+          }
+        });
+      }
+
+      navLinks.forEach((link) => {
+        link.addEventListener("click", function () {
+          navLinks.forEach((item) => item.classList.remove("color"));
+          this.classList.add("color");
+
+          if (menuToggle) {
+            menuToggle.checked = false;
+          }
+        });
+      });
+
+      window.addEventListener("scroll", setActiveLink);
+      window.addEventListener("load", setActiveLink);
+    </script>
   </body>
 </html>
