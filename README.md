@@ -19,4 +19,4 @@ A responsive personal portfolio website built using pure HTML and CSS.
 - Typed.js
 
 ## 🌐 Live Demo
-Coming Soon
+https://fokir-portfolio-pi.vercel.app/
